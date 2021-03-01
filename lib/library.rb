@@ -72,6 +72,7 @@ class Library
     end
 
     def take_book_from(position)
+        @book_storage.delete_book_from_position(position)
         "Slot #{position} is free"
     end
 

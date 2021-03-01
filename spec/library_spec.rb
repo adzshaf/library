@@ -138,6 +138,12 @@ RSpec.describe Library do
             result = subject.take_book_from('010102')
             expect(result).to eq 'Slot 010102 is free'
         end
+
+        it "should not have 010102 key of book_storage if take_book_from('010102') is called" do
+            subject.take_book_from('010102')
+            result = subject.book_storage.get_book_by_position('010102')
+            expect(result).to eq nil
+        end
     end
 
     context "find_book" do
