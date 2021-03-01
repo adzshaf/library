@@ -85,5 +85,11 @@ RSpec.describe Library do
             subject.increment_position
             expect(subject.available_position).to eq "010201"
         end
+
+        it "set available_position to new shelf after put book in last row" do
+            subject.available_position = "010202"
+            subject.increment_position
+            expect(subject.available_position).to eq "020101"
+        end
     end
 end

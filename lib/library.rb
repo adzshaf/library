@@ -42,7 +42,11 @@ class Library
         row = @available_position[2, 2].to_i
         column = @available_position[4, 2].to_i
 
-        if column + 1 > @column_size
+        if row + 1 > @row_size and column + 1 > @column_size
+            column = 1
+            row = 1
+            shelf += 1
+        elsif column + 1 > @column_size
             column = 1
             row += 1
         else
