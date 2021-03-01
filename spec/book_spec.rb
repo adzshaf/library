@@ -15,23 +15,23 @@ RSpec.describe Book do
         end
     end 
 
-    context "has_title" do
-        it "returns true if has_title('Harry Potter') is called" do
+    context "has_title?" do
+        it "returns true if has_title?('Harry Potter') is called" do
             result = subject.has_title?('Harry Potter')
             expect(result).to eq true
         end
 
-        it "returns false if has_title('Lord of the Rings') is called" do
+        it "returns false if has_title?('Lord of the Rings') is called" do
             result = subject.has_title?('Lord of the Rings')
             expect(result).to eq false
         end
 
-        it "returns true if has_title('Harry') is called" do
+        it "returns true if has_title?('Harry') is called" do
             result = subject.has_title?('Harry')
             expect(result).to eq true
         end
 
-        it "returns true if has_title('HARRY') is called" do
+        it "returns true if has_title?('HARRY') is called" do
             result = subject.has_title?('HARRY')
             expect(result).to eq true
         end
