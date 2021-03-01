@@ -40,8 +40,8 @@ RSpec.describe 'BookStorage' do
         let(:book) { Book.new isbn, title, author }
         let(:position) { "010101" }
 
-        it "should have one book inside storage if insert to empty storage is called" do
-            subject.insert(position, book)
+        it "should have one book inside storage if add_book to empty storage is called" do
+            subject.add_book(position, book)
             expect(subject.storage.size()).to eq 1
         end
     end

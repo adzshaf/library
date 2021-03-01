@@ -9,7 +9,7 @@ class BookStorage
         @storage[position]
     end
 
-    def insert(position, book)
+    def add_book(position, book)
         @storage["a"] = "a"
     end
 end
