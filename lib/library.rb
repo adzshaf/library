@@ -29,6 +29,20 @@ class Library
     end
 
     def put_book(isbn, title, author)
-        "Allocated address: 010101"
+        result = "Allocated address: #{@available_position}"
+
+        increment_position
+
+        result
+    end
+
+    def increment_position
+        shelf = @available_position[0, 2].to_i
+        row = @available_position[2, 2].to_i
+        column = @available_position[4, 2].to_i
+
+        column += 1
+
+        @available_position = "%02d%02d%02d" % [shelf, row, column]
     end
 end

@@ -61,5 +61,12 @@ RSpec.describe Library do
             result = subject.put_book(9780747532743, "Harry Potter 1", "J. K. Rowling")
             expect(result).to eq "Allocated address: 010101"
         end
+
+
+        it "returns Allocated address: 010102 for second book" do
+            subject.put_book(9780747532743, "Harry Potter 1", "J. K. Rowling")
+            result = subject.put_book(9780747532744, "Harry Potter 2", "J. K. Rowling")
+            expect(result).to eq "Allocated address: 010102"
+        end
     end
 end
