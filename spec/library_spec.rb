@@ -74,6 +74,12 @@ RSpec.describe Library do
             subject.build_library(2, 2, 2)
         end
 
+        it "set available_position to new column after increment_position is called" do
+            subject.available_position = "010101"
+            subject.increment_position
+            expect(subject.available_position).to eq "010102"
+        end
+
         it "set available_position to new row after put book in last column" do
             subject.available_position = "010102"
             subject.increment_position
