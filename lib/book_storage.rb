@@ -16,4 +16,8 @@ class BookStorage
     def delete_book_from_position(position)
         @storage.delete(position)
     end
+
+    def to_str
+        ""
+    end
 end

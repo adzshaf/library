@@ -73,4 +73,15 @@ RSpec.describe 'BookStorage' do
             expect(subject.storage.size()).to eq 1
         end
     end
+
+    context "to_str" do
+        let(:book1) { Book.new 9780747532744, 'Harry Potter', 'J. K. Rowling' }
+        let(:position1) { "010101" }
+        let(:book2) { Book.new 9780747532745, 'Harry Potter 2', 'J. K. Rowling' }
+        let(:position2) { "010102" }
+
+        it "should return empty string if book storage has empty storage" do
+            expect(subject.to_str).to eq ""
+        end
+    end
 end
