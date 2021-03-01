@@ -60,6 +60,9 @@ RSpec.describe Book do
     end
 
     context "to_str" do
-        
+        it "returns information of isbn, title, author with | separator" do
+            result = subject.to_str
+            expect(result).to eq "9780747532744 | Harry Potter | J. K. Rowling"
+        end
     end
 end
