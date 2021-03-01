@@ -72,6 +72,12 @@ RSpec.describe Library do
             subject.put_book(9780747532743, "Harry Potter 1", "J. K. Rowling")
             expect(subject.book_storage.storage.size()).to eq 1
         end
+
+        it "returns All shelves are full if no space left" do
+            subject.available_position = nil
+            result = subject.put_book(9780747532743, "Harry Potter 1", "J. K. Rowling")
+            expect(result).to eq "All shelves are full!"
+        end
     end
 
     context "increment_position" do

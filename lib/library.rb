@@ -30,6 +30,10 @@ class Library
     end
 
     def put_book(isbn, title, author)
+        if @available_position.nil?
+            return "All shelves are full!"
+        end
+
         result = "Allocated address: #{@available_position}"
 
         increment_position
