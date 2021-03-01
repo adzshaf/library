@@ -16,7 +16,7 @@ class Book
     end
 
     def has_author(author)
-        if author.eql? "J. K. Rowling"
+        if @author.include? author
             true
         else
             false
