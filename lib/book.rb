@@ -8,7 +8,7 @@ class Book
     end
 
     def has_title(title)
-        if title.eql? "Harry Potter"
+        if @title.include? title
             true
         else
             false
