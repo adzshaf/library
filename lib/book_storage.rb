@@ -45,4 +45,8 @@ class BookStorage
             "Found the book at #{position_result}"
         end
     end
+
+    def search_book_by_author(author)
+        nil
+    end
 end
