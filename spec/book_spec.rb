@@ -52,6 +52,11 @@ RSpec.describe Book do
             result = subject.has_author?('Rowling')
             expect(result).to eq true
         end
+
+        it "returns true if has_author?('ROWLING') is called" do
+            result = subject.has_author?('ROWLING')
+            expect(result).to eq true
+        end
     end
 
     context "to_str" do
