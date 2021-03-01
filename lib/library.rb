@@ -36,10 +36,10 @@ class Library
 
         result = "Allocated address: #{@available_position}"
 
-        increment_position
-
         book = Book.new(isbn, title, author)
         @book_storage.add_book(@available_position, book)
+
+        increment_position
 
         result
     end
@@ -75,7 +75,7 @@ class Library
         "Slot #{position} is free"
     end
 
-    def find_book(position)
-        'Found the book at 010101'
+    def find_book(isbn)
+        @book_storage.find_book_by_isbn(isbn)
     end
 end

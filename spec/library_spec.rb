@@ -148,8 +148,13 @@ RSpec.describe Library do
         end
 
         it "should return Found the book at 010101 if find_book('9780747532744') is called" do
-            result = subject.find_book('9780747532744')
+            result = subject.find_book(9780747532744)
             expect(result).to eq 'Found the book at 010101'
+        end
+
+        it "should return Found the book at 010102 if find_book('9780747532745') is called" do
+            result = subject.find_book(9780747532745)
+            expect(result).to eq 'Found the book at 010102'
         end
     end
 end
