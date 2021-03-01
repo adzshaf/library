@@ -31,4 +31,18 @@ RSpec.describe 'BookStorage' do
             expect(result.is_a?(Book)).to eq true
         end
     end
+
+    context "insert" do
+        let(:isbn) { 9780747532744 }
+        let(:title) { 'Harry Potter' }
+        let(:author) { 'J. K. Rowling' }
+
+        let(:book) { Book.new isbn, title, author }
+        let(:position) { "010101" }
+
+        it "should have one book inside storage if insert to empty storage is called" do
+            subject.insert(position, book)
+            expect(subject.storage.size()).to eq 1
+        end
+    end
 end

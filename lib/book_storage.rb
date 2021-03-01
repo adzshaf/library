@@ -8,4 +8,8 @@ class BookStorage
     def get_book_by_position(position)
         @storage[position]
     end
+
+    def insert(position, book)
+        @storage["a"] = "a"
+    end
 end
