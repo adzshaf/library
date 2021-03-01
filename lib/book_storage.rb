@@ -12,4 +12,8 @@ class BookStorage
     def add_book(position, book)
         @storage[position] = book
     end
+
+    def delete_book_from_position(position)
+        @storage = Hash.new
+    end
 end

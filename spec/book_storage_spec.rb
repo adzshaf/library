@@ -51,4 +51,19 @@ RSpec.describe 'BookStorage' do
             expect(result.is_a?(Book)).to eq true
         end
     end
+
+    context "delete_book_from_position" do
+        let(:isbn) { 9780747532744 }
+        let(:title) { 'Harry Potter' }
+        let(:author) { 'J. K. Rowling' }
+
+        let(:book) { Book.new isbn, title, author }
+        let(:position) { "010101" }
+
+        it "should has empty storage if delete_book is called" do
+            subject.add_book(position, book)
+            result = subject.delete_book_from_position(position)
+            expect(subject.storage.size()).to eq 0
+        end
+    end
 end
