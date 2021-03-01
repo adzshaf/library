@@ -1,7 +1,7 @@
 require_relative 'book_storage'
 
 class Library
-    attr_reader :shelf_size, :row_size, :column_size, :available_position
+    attr_reader :shelf_size, :row_size, :column_size, :available_position, :book_storage
     attr_writer :available_position
 
     def initialize
@@ -33,6 +33,9 @@ class Library
         result = "Allocated address: #{@available_position}"
 
         increment_position
+
+        book = Book.new(isbn, title, author)
+        @book_storage.add_book(@available_position, book)
 
         result
     end

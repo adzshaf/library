@@ -67,6 +67,11 @@ RSpec.describe Library do
             result = subject.put_book(9780747532744, "Harry Potter 2", "J. K. Rowling")
             expect(result).to eq "Allocated address: 010102"
         end
+
+        it "has one book in storage after put book" do
+            subject.put_book(9780747532743, "Harry Potter 1", "J. K. Rowling")
+            expect(subject.book_storage.storage.size()).to eq 1
+        end
     end
 
     context "increment_position" do
