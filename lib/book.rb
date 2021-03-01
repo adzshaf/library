@@ -7,12 +7,8 @@ class Book
         @author = author
     end
 
-    def has_title(title)
-        if @title.downcase.include? title.downcase
-            true
-        else
-            false
-        end
+    def has_title?(title)
+        @title.downcase.include? title.downcase
     end
 
     def has_author(author)
