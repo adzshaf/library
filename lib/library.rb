@@ -66,4 +66,8 @@ class Library
             @available_position = "%02d%02d%02d" % [shelf, row, column]
         end
     end
+
+    def list_books
+        @book_storage.to_s
+    end
 end

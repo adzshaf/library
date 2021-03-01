@@ -109,4 +109,16 @@ RSpec.describe Library do
             expect(subject.available_position).to eq nil
         end
     end
+
+    context "list_books" do
+        before(:each) do
+            subject.build_library(1, 1, 2)
+            subject.put_book(9780747532744, 'Harry Potter', 'J. K. Rowling')
+            subject.put_book(9780747532745, 'Harry Potter 1', 'J. K. Rowling')
+        end
+
+        it "returns strings of books in book_storage by calling book_storage.to_s" do
+            expect(subject.list_books).to eq subject.book_storage.to_s
+        end
+    end
 end
