@@ -32,7 +32,7 @@ RSpec.describe 'BookStorage' do
         end
     end
 
-    context "insert" do
+    context "add_book" do
         let(:isbn) { 9780747532744 }
         let(:title) { 'Harry Potter' }
         let(:author) { 'J. K. Rowling' }
