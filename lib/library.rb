@@ -72,7 +72,15 @@ class Library
     end
 
     def take_book_from(position)
-        @book_storage.delete_book_from_position(position)
+        shelf = position[0, 2].to_i
+        row = position[2, 2].to_i
+        column = position[4, 2].to_i
+
+        if shelf > @shelf_size or row > @row_size or column > column_size
+            return "Invalid code!"
+        end
+        
+        delete_result = @book_storage.delete_book_from_position(position)
         "Slot #{position} is free"
     end
 

@@ -144,6 +144,11 @@ RSpec.describe Library do
             result = subject.book_storage.get_book_by_position('010102')
             expect(result).to eq nil
         end
+
+        it "should return Invalid code! if parameter of position is outside of range is called" do
+            result = subject.take_book_from('010103')
+            expect(result).to eq "Invalid code!"
+        end
     end
 
     context "find_book" do
