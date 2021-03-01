@@ -19,7 +19,7 @@ class Book
         "#{@isbn} | #{@title} | #{@author}"
     end
 
-    def has_isbn?(isbn)
+    def has_isbn?(isbn_input)
         true
     end
 end

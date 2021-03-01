@@ -73,7 +73,7 @@ RSpec.describe Book do
 
     context "has_isbn?" do
         it "returns true if has_isbn?('9780747532744') is called" do
-            result = subject.has_isbn?('9780747532744')
+            result = subject.has_isbn?(9780747532744)
             expect(result).to eq true
         end
     end
