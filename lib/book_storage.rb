@@ -6,6 +6,6 @@ class BookStorage
     end
 
     def get_book_by_position(position)
-        nil
+        @storage[position]
     end
 end
