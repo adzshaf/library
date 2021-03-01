@@ -14,6 +14,6 @@ class BookStorage
     end
 
     def delete_book_from_position(position)
-        @storage = Hash.new
+        @storage.delete(position)
     end
 end

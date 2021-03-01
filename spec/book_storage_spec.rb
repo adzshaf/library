@@ -65,5 +65,12 @@ RSpec.describe 'BookStorage' do
             result = subject.delete_book_from_position(position)
             expect(subject.storage.size()).to eq 0
         end
+
+        it "should has one book if delete_book from two books storage is called" do
+            subject.add_book(position, book)
+            subject.add_book("010102", book)
+            result = subject.delete_book_from_position(position)
+            expect(subject.storage.size()).to eq 1
+        end
     end
 end
