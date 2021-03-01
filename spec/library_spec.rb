@@ -45,5 +45,10 @@ RSpec.describe Library do
             expect(subject.row_size).to eq 2
             expect(subject.column_size).to eq 3
         end
+
+        it "returns 010101 for available_position after build_library(1, 2, 3) is called" do
+            subject.build_library(1, 2, 3)
+            expect(subject.available_position).to eq "010101"
+        end
     end
 end

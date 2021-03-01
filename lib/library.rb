@@ -1,7 +1,7 @@
 require_relative 'book_storage'
 
 class Library
-    attr_reader :shelf_size, :row_size, :column_size
+    attr_reader :shelf_size, :row_size, :column_size, :available_position
 
     def initialize
         @book_storage = BookStorage.new 
@@ -11,6 +11,7 @@ class Library
         @shelf_size = no_shelf
         @row_size = row
         @column_size = column
+        @available_position = "010101"
 
         output = []
         no_shelf.times do |index|
