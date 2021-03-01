@@ -9,7 +9,7 @@ class Library
         if row > 1 
             "Shelf 1 with 2 rows and 1 column is added"
         elsif column > 1
-            "Shelf 1 with 1 row and 2 columns is added"
+            "Shelf 1 with 1 row and #{column} columns is added"
         else
             "Shelf 1 with 1 row and 1 column is added"
         end
