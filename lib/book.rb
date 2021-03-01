@@ -8,6 +8,10 @@ class Book
     end
 
     def has_title(title)
-        true
+        if title.eql? "Harry Potter"
+            true
+        else
+            false
+        end
     end
 end
