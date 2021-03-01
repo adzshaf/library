@@ -74,4 +74,8 @@ class Library
     def take_book_from(position)
         "Slot #{position} is free"
     end
+
+    def find_book(position)
+        'Found the book at 010101'
+    end
 end

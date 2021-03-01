@@ -139,4 +139,17 @@ RSpec.describe Library do
             expect(result).to eq 'Slot 010102 is free'
         end
     end
+
+    context "find_book" do
+        before(:each) do
+            subject.build_library(1, 1, 2)
+            subject.put_book(9780747532744, 'Harry Potter', 'J. K. Rowling')
+            subject.put_book(9780747532745, 'Harry Potter 1', 'J. K. Rowling')
+        end
+
+        it "should return Found the book at 010101 if find_book('9780747532744') is called" do
+            result = subject.find_book('9780747532744')
+            expect(result).to eq 'Found the book at 010101'
+        end
+    end
 end
