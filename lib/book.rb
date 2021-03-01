@@ -16,6 +16,6 @@ class Book
     end
 
     def to_str
-        '9780747532744 | Harry Potter | J. K. Rowling'
+        "#{@isbn} | #{@title} | #{@author}"
     end
 end
