@@ -96,5 +96,11 @@ RSpec.describe Library do
             subject.increment_position
             expect(subject.available_position).to eq "020101"
         end
+
+        it "set available_position to nil to show that there is no space left" do
+            subject.available_position = "020202"
+            subject.increment_position
+            expect(subject.available_position).to eq nil
+        end
     end
 end

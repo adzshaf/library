@@ -56,6 +56,10 @@ class Library
             column += 1
         end
 
-        @available_position = "%02d%02d%02d" % [shelf, row, column]
+        if shelf > @shelf_size
+            @available_position = nil
+        else
+            @available_position = "%02d%02d%02d" % [shelf, row, column]
+        end
     end
 end
