@@ -8,6 +8,8 @@ class Library
     def build_library(no_shelf, row, column)
         if row > 1 
             "Shelf 1 with 2 rows and 1 column is added"
+        elsif column > 1
+            "Shelf 1 with 1 row and 2 columns is added"
         else
             "Shelf 1 with 1 row and 1 column is added"
         end
