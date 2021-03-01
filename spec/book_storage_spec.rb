@@ -11,4 +11,13 @@ RSpec.describe 'BookStorage' do
             expect(storage.empty?).to eq true
         end
     end 
+
+    context "get_book_by_position" do
+        let(:position) { "010101" }
+
+        it "should return nil if get_book_by_position of empty storage is called" do
+            result = subject.get_book_by_position(position)
+            expect(result).to eq nil
+        end
+    end
 end

@@ -4,4 +4,8 @@ class BookStorage
     def initialize
         @storage = Hash.new
     end
+
+    def get_book_by_position(position)
+        nil
+    end
 end
