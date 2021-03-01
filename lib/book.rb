@@ -14,4 +14,8 @@ class Book
             false
         end
     end
+
+    def has_author(author)
+        true
+    end
 end
