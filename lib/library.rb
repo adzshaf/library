@@ -81,6 +81,10 @@ class Library
         end
         
         delete_result = @book_storage.delete_book_from_position(position)
+
+        if delete_result.nil?
+            return "Slot #{position} is empty"
+        end
         "Slot #{position} is free"
     end
 

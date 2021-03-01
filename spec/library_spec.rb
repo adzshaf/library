@@ -149,6 +149,12 @@ RSpec.describe Library do
             result = subject.take_book_from('010103')
             expect(result).to eq "Invalid code!"
         end
+
+        it "should return slot is empty if storage doesn't have keys" do
+            subject.take_book_from('010102')
+            result = subject.take_book_from('010102')
+            expect(result).to eq "Slot 010102 is empty"
+        end
     end
 
     context "find_book" do
