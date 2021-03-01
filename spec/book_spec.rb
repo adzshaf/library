@@ -76,5 +76,10 @@ RSpec.describe Book do
             result = subject.has_isbn?(9780747532744)
             expect(result).to eq true
         end
+
+        it "returns false if has_isbn?('9780747532745') is called" do
+            result = subject.has_isbn?(9780747532745)
+            expect(result).to eq false
+        end
     end
 end

@@ -20,6 +20,6 @@ class Book
     end
 
     def has_isbn?(isbn_input)
-        true
+        @isbn == isbn_input
     end
 end
