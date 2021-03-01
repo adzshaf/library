@@ -156,5 +156,10 @@ RSpec.describe Library do
             result = subject.find_book(9780747532745)
             expect(result).to eq 'Found the book at 010102'
         end
+
+        it "should return Book not found! if find_book of non existent book is called" do
+            result = subject.find_book(9780747532746)
+            expect(result).to eq 'Book not found!'
+        end
     end
 end
