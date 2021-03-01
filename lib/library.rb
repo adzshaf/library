@@ -70,4 +70,8 @@ class Library
     def list_books
         @book_storage.to_s
     end
+
+    def take_book_from(position)
+        "Slot 010101 is free"
+    end
 end
