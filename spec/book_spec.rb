@@ -37,19 +37,19 @@ RSpec.describe Book do
         end
     end
 
-    context "has_author" do
-        it "returns true if has_author('J. K. Rowling') is called" do
-            result = subject.has_author('J. K. Rowling')
+    context "has_author?" do
+        it "returns true if has_author?('J. K. Rowling') is called" do
+            result = subject.has_author?('J. K. Rowling')
             expect(result).to eq true
         end
 
-        it "returns false if has_author('Martin Fowler') is called" do
-            result = subject.has_author('Martin Fowler')
+        it "returns false if has_author?('Martin Fowler') is called" do
+            result = subject.has_author?('Martin Fowler')
             expect(result).to eq false
         end
 
-        it "returns true if has_author('Rowling') is called" do
-            result = subject.has_author('Rowling')
+        it "returns true if has_author?('Rowling') is called" do
+            result = subject.has_author?('Rowling')
             expect(result).to eq true
         end
     end

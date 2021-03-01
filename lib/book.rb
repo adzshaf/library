@@ -11,11 +11,7 @@ class Book
         @title.downcase.include? title.downcase
     end
 
-    def has_author(author)
-        if @author.include? author
-            true
-        else
-            false
-        end
+    def has_author?(author)
+        @author.downcase.include? author.downcase
     end
 end
