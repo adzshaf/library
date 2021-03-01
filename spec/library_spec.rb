@@ -38,5 +38,12 @@ RSpec.describe Library do
             result = subject.build_library(3, 3, 3)
             expect(result).to eq "Shelf 1 with 3 rows and 3 columns is added\nShelf 2 with 3 rows and 3 columns is added\nShelf 3 with 3 rows and 3 columns is added"
         end
+
+        it "has 1 shelf, 2 row, 3 columns after build_library(1, 2, 3) is called" do
+            subject.build_library(1, 2, 3)
+            expect(subject.shelf_size).to eq 1
+            expect(subject.row_size).to eq 2
+            expect(subject.column_size).to eq 3
+        end
     end
 end

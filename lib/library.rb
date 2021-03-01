@@ -1,11 +1,17 @@
 require_relative 'book_storage'
 
 class Library
+    attr_reader :shelf_size, :row_size, :column_size
+
     def initialize
         @book_storage = BookStorage.new 
     end
 
     def build_library(no_shelf, row, column)
+        @shelf_size = no_shelf
+        @row_size = row
+        @column_size = column
+
         output = []
         no_shelf.times do |index|
             if row > 1 and column >1
