@@ -19,7 +19,12 @@ class BookStorage
 
     def to_str
         if @storage.size > 0 
-            "010101: 9780747532744 | Harry Potter | J. K. Rowling"
+            result = []
+
+            @storage.each do |key, book|
+                result.push("#{key}: #{book.to_str}")
+            end
+            result.join("\n")
         else
             ""
         end

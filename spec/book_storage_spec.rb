@@ -88,5 +88,11 @@ RSpec.describe 'BookStorage' do
             subject.add_book(position1, book1)
             expect(subject.to_str).to eq "010101: 9780747532744 | Harry Potter | J. K. Rowling"
         end
+
+        it "should return string of 2 books if book storage has 2 books" do
+            subject.add_book(position1, book1)
+            subject.add_book(position2, book2)
+            expect(subject.to_str).to eq "010101: 9780747532744 | Harry Potter | J. K. Rowling\n010102: 9780747532745 | Harry Potter 2 | J. K. Rowling"
+        end
     end
 end
