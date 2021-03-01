@@ -2,6 +2,7 @@ require_relative 'book_storage'
 
 class Library
     attr_reader :shelf_size, :row_size, :column_size, :available_position
+    attr_writer :available_position
 
     def initialize
         @book_storage = BookStorage.new 
@@ -41,7 +42,12 @@ class Library
         row = @available_position[2, 2].to_i
         column = @available_position[4, 2].to_i
 
-        column += 1
+        if column + 1 > @column_size
+            column = 1
+            row += 1
+        else
+            column += 1
+        end
 
         @available_position = "%02d%02d%02d" % [shelf, row, column]
     end
