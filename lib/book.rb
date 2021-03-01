@@ -16,6 +16,10 @@ class Book
     end
 
     def has_author(author)
-        true
+        if author.eql? "J. K. Rowling"
+            true
+        else
+            false
+        end
     end
 end
