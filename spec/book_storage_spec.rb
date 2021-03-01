@@ -74,25 +74,25 @@ RSpec.describe 'BookStorage' do
         end
     end
 
-    context "to_str" do
+    context "to_s" do
         let(:book1) { Book.new 9780747532744, 'Harry Potter', 'J. K. Rowling' }
         let(:position1) { "010101" }
         let(:book2) { Book.new 9780747532745, 'Harry Potter 2', 'J. K. Rowling' }
         let(:position2) { "010102" }
 
         it "should return empty string if book storage has empty storage" do
-            expect(subject.to_str).to eq ""
+            expect(subject.to_s).to eq ""
         end
 
         it "should return string of 1 book if book storage has 1 book" do
             subject.add_book(position1, book1)
-            expect(subject.to_str).to eq "010101: 9780747532744 | Harry Potter | J. K. Rowling"
+            expect(subject.to_s).to eq "010101: 9780747532744 | Harry Potter | J. K. Rowling"
         end
 
         it "should return string of 2 books if book storage has 2 books" do
             subject.add_book(position1, book1)
             subject.add_book(position2, book2)
-            expect(subject.to_str).to eq "010101: 9780747532744 | Harry Potter | J. K. Rowling\n010102: 9780747532745 | Harry Potter 2 | J. K. Rowling"
+            expect(subject.to_s).to eq "010101: 9780747532744 | Harry Potter | J. K. Rowling\n010102: 9780747532745 | Harry Potter 2 | J. K. Rowling"
         end
     end
 end

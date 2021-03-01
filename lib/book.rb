@@ -15,7 +15,7 @@ class Book
         @author.downcase.include? author.downcase
     end
 
-    def to_str
+    def to_s
         "#{@isbn} | #{@title} | #{@author}"
     end
 end

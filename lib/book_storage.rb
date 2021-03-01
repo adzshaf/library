@@ -17,12 +17,12 @@ class BookStorage
         @storage.delete(position)
     end
 
-    def to_str
+    def to_s
         if @storage.size > 0 
             result = []
 
             @storage.each do |key, book|
-                result.push("#{key}: #{book.to_str}")
+                result.push("#{key}: #{book.to_s}")
             end
             result.join("\n")
         else
