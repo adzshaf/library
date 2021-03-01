@@ -8,7 +8,7 @@ class Book
     end
 
     def has_title(title)
-        if @title.include? title
+        if @title.downcase.include? title.downcase
             true
         else
             false
