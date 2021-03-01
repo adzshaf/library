@@ -83,5 +83,10 @@ RSpec.describe 'BookStorage' do
         it "should return empty string if book storage has empty storage" do
             expect(subject.to_str).to eq ""
         end
+
+        it "should return string of 1 book if book storage has 1 book" do
+            subject.add_book(position1, book1)
+            expect(subject.to_str).to eq "010101: 9780747532744 | Harry Potter | J. K. Rowling"
+        end
     end
 end

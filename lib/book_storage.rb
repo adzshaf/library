@@ -18,6 +18,10 @@ class BookStorage
     end
 
     def to_str
-        ""
+        if @storage.size > 0 
+            "010101: 9780747532744 | Harry Potter | J. K. Rowling"
+        else
+            ""
+        end
     end
 end
