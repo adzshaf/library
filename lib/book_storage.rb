@@ -31,6 +31,14 @@ class BookStorage
     end
 
     def find_book_by_isbn(isbn)
-        "Found the book at 010101"
+        position_result = ""
+
+        @storage.each do |position, book|
+            if book.has_isbn?(isbn)
+                position_result = position
+            end
+        end
+        
+        "Found the book at #{position_result}"
     end
 end

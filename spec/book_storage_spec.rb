@@ -113,5 +113,10 @@ RSpec.describe 'BookStorage' do
             result = subject.find_book_by_isbn(9780747532744)
             expect(result).to eq "Found the book at 010101"
         end
+
+        it "should return Found the book at second position if find_book_by_isbn of second book is called" do
+            result = subject.find_book_by_isbn(9780747532745)
+            expect(result).to eq "Found the book at 010102"
+        end
     end
 end
