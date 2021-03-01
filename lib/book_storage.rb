@@ -29,4 +29,8 @@ class BookStorage
             ""
         end
     end
+
+    def find_book_by_isbn(isbn)
+        "Found the book at 010101"
+    end
 end

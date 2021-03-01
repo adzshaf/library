@@ -95,4 +95,23 @@ RSpec.describe 'BookStorage' do
             expect(subject.to_s).to eq "010101: 9780747532744 | Harry Potter | J. K. Rowling\n010102: 9780747532745 | Harry Potter 2 | J. K. Rowling"
         end
     end
+
+    context "find_book" do
+        let(:isbn) { 9780747532744 }
+        let(:title) { 'Harry Potter' }
+        let(:author) { 'J. K. Rowling' }
+
+        let(:book) { Book.new isbn, title, author }
+        let(:position) { "010101" }
+
+        before(:each) do
+            subject.add_book(position, book)
+            subject.add_book("010102", Book.new(9780747532745, 'Harry Potter 2', 'J. K. Rowling Jr.'))
+        end
+
+        it "should return Found the book at first position if find_book_by_isbn of first book is called" do
+            result = subject.find_book_by_isbn(9780747532744)
+            expect(result).to eq "Found the book at 010101"
+        end
+    end
 end
