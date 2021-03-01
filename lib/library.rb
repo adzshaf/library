@@ -72,6 +72,6 @@ class Library
     end
 
     def take_book_from(position)
-        "Slot 010101 is free"
+        "Slot #{position} is free"
     end
 end

@@ -133,5 +133,10 @@ RSpec.describe Library do
             result = subject.take_book_from('010101')
             expect(result).to eq 'Slot 010101 is free'
         end
+
+        it "should return Slot 010102 is free if take_book_from('010102') is called" do
+            result = subject.take_book_from('010102')
+            expect(result).to eq 'Slot 010102 is free'
+        end
     end
 end
