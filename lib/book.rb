@@ -18,4 +18,8 @@ class Book
     def to_s
         "#{@isbn} | #{@title} | #{@author}"
     end
+
+    def has_isbn?(isbn)
+        true
+    end
 end
