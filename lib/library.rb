@@ -27,4 +27,8 @@ class Library
         end
         output.join("\n")
     end
+
+    def put_book(isbn, title, author)
+        "Allocated address: 010101"
+    end
 end

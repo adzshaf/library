@@ -51,4 +51,15 @@ RSpec.describe Library do
             expect(subject.available_position).to eq "010101"
         end
     end
+
+    context "put_book" do
+        before(:each) do
+            subject.build_library(2, 2, 2)
+        end
+
+        it "returns Allocated address: 010101" do
+            result = subject.put_book(9780747532743, "Harry Potter 1", "J. K. Rowling")
+            expect(result).to eq "Allocated address: 010101"
+        end
+    end
 end
