@@ -31,14 +31,18 @@ class BookStorage
     end
 
     def find_book_by_isbn(isbn)
-        position_result = ""
+        position_result = nil
 
         @storage.each do |position, book|
             if book.has_isbn?(isbn)
                 position_result = position
             end
         end
-        
-        "Found the book at #{position_result}"
+
+        if position_result.nil?
+            return "Book not found!"
+        else
+            "Found the book at #{position_result}"
+        end
     end
 end

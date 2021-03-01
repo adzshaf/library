@@ -118,5 +118,10 @@ RSpec.describe 'BookStorage' do
             result = subject.find_book_by_isbn(9780747532745)
             expect(result).to eq "Found the book at 010102"
         end
+
+        it "should return Book not found! if find_book_by_isbn of non existence book is called" do
+            result = subject.find_book_by_isbn(1111111111111)
+            expect(result).to eq "Book not found!"
+        end
     end
 end
