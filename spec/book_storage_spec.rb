@@ -44,5 +44,11 @@ RSpec.describe 'BookStorage' do
             subject.add_book(position, book)
             expect(subject.storage.size()).to eq 1
         end
+
+        it "should has book type for book that is added by add_book" do
+            subject.add_book(position, book)
+            result = subject.get_book_by_position(position)
+            expect(result.is_a?(Book)).to eq true
+        end
     end
 end
