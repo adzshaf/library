@@ -178,6 +178,12 @@ RSpec.describe Library do
             result = subject.find_book(9780747532746)
             expect(result).to eq 'Book not found!'
         end
+
+        it "should call book_storage.find_book_by_isbn" do
+            allow(subject.book_storage).to receive(:find_book_by_isbn).and_return(nil)
+            expect(subject.book_storage).to receive(:find_book_by_isbn).with(9780747532746)
+            expect(subject.find_book(9780747532746)).to eq ("Book not found!")
+        end
     end
 
     context "search_book_by_author" do

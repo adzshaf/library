@@ -90,7 +90,12 @@ class Library
     end
 
     def find_book(isbn)
-        @book_storage.find_book_by_isbn(isbn)
+        position = @book_storage.find_book_by_isbn(isbn)
+        if position.nil?
+            "Book not found!"
+        else
+            "Found the book at #{position}"
+        end
     end
 
     def search_book_by_author(author)
