@@ -100,19 +100,16 @@ class Library
 
     def search_book_by_author(author)
         result = @book_storage.search_book_by_author(author)
-        if result.empty? 
-            "No result found!"
-        else
-            string_result = []
-            result.each do |book|
-                string_result.push(book.to_s)
-            end
-            string_result.join("\n")
-        end
+        send_outputs(result)
     end
 
     def search_book_by_title(title)
         result = @book_storage.search_book_by_title(title)
+        send_outputs(result)
+    end
+
+    private
+    def send_outputs(result)
         if result.empty? 
             "No result found!"
         else
