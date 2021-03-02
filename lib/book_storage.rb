@@ -47,11 +47,11 @@ class BookStorage
     end
 
     def search_book_by_author(author)
-        book_result = nil
+        book_result = []
 
         @storage.each_value do |book|
             if book.has_author?(author)
-                book_result = book
+                book_result.push(book)
             end
         end
 
