@@ -21,6 +21,8 @@ class BookStorage
         if @storage.size > 0 
             result = []
 
+            sort_storage()
+
             @storage.each do |key, book|
                 result.push("#{key}: #{book.to_s}")
             end
@@ -32,6 +34,7 @@ class BookStorage
 
     def find_book_by_isbn(isbn)
         position_result = nil
+
 
         @storage.each do |position, book|
             if book.has_isbn?(isbn)
@@ -45,6 +48,8 @@ class BookStorage
     def search_book_by_author(author)
         book_result = []
 
+        sort_storage()
+
         @storage.each_value do |book|
             if book.has_author?(author)
                 book_result.push(book)
@@ -57,6 +62,8 @@ class BookStorage
     def search_book_by_title(title)
         title_result = []
 
+        sort_storage()
+
         @storage.each_value do |book|
             if book.has_title?(title)
                 title_result.push(book)
@@ -68,5 +75,10 @@ class BookStorage
 
     def size()
         @storage.size
+    end
+
+    private
+    def sort_storage()
+        @storage.sort_by { |position, book| position }
     end
 end
