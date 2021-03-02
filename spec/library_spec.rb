@@ -217,12 +217,12 @@ RSpec.describe Library do
         it "should call book_storage.search_book_by_author" do
             allow(subject.book_storage).to receive(:search_book_by_author).and_return([])
             expect(subject.book_storage).to receive(:search_book_by_author).with('Uncle Bob')
-            expect(subject.search_book_by_author('Uncle Bob')).to eq ("No result found!")
+            expect(subject.search_book_by_author('Uncle Bob')).to eq ("Book not found!")
         end
 
-        it "should return no result found if no book is found from search_book_by_author" do
+        it "should return Book not found if no book is found from search_book_by_author" do
             result = subject.search_book_by_author('Uncle Bob')
-            expect(result).to eq ("No result found!")
+            expect(result).to eq ("Book not found!")
         end
 
         it "should return books if books are found from search_book_by_author" do
@@ -238,15 +238,15 @@ RSpec.describe Library do
             subject.put_book(9780747532745, 'Harry Potter 1', 'J. K. Rowling')
         end
 
-        it "should return no result found if no book is found from search_book_by_title" do
+        it "should return Book not found if no book is found from search_book_by_title" do
             result = subject.search_book_by_title('Clean Code')
-            expect(result).to eq ("No result found!")
+            expect(result).to eq ("Book not found!")
         end
 
         it "should call book_storage.search_book_by_title" do
             allow(subject.book_storage).to receive(:search_book_by_title).and_return([])
             expect(subject.book_storage).to receive(:search_book_by_title).with('Clean Code')
-            expect(subject.search_book_by_title('Clean Code')).to eq ("No result found!")
+            expect(subject.search_book_by_title('Clean Code')).to eq ("Book not found!")
         end
 
         it "should return books if books are found from search_book_by_title" do

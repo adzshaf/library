@@ -15,19 +15,7 @@ class Library
         @column_size = column.to_i
         @available_position = "010101"
 
-        output = []
-        @shelf_size.times do |index|
-            if @row_size > 1 and @column_size > 1
-                output.push("Shelf #{index+1} with #{row} rows and #{column} columns is added")
-            elsif @row_size > 1 
-                output.push("Shelf #{index+1} with #{row} rows and 1 column is added")
-            elsif @column_size > 1
-                output.push("Shelf #{index+1} with 1 row and #{column} columns is added")
-            else
-                output.push("Shelf #{index+1} with 1 row and 1 column is added")
-            end
-        end
-        output.join("\n")
+        print_library_information
     end
 
     def put_book(isbn, title, author)
@@ -115,7 +103,7 @@ class Library
     private
     def send_outputs(result)
         if result.empty? 
-            "No result found!"
+            "Book not found!"
         else
             result.join("\n")
         end
@@ -131,5 +119,22 @@ class Library
             return false
         end
         true
+    end
+
+    private
+    def print_library_information()
+        output = []
+        @shelf_size.times do |index|
+            if @row_size > 1 and @column_size > 1
+                output.push("Shelf #{index+1} with #{@row_size} rows and #{@column_size} columns is added")
+            elsif @row_size > 1 
+                output.push("Shelf #{index+1} with #{@row_size} rows and 1 column is added")
+            elsif @column_size > 1
+                output.push("Shelf #{index+1} with 1 row and #{@column_size} columns is added")
+            else
+                output.push("Shelf #{index+1} with 1 row and 1 column is added")
+            end
+        end
+        output.join("\n")
     end
 end
