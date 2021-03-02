@@ -42,7 +42,7 @@ RSpec.describe 'BookStorage' do
 
         it "should have one book inside storage if add_book to empty storage is called" do
             subject.add_book(position, book)
-            expect(subject.storage.size()).to eq 1
+            expect(subject.size()).to eq 1
         end
 
         it "should has book type for book that is added by add_book" do
@@ -63,14 +63,14 @@ RSpec.describe 'BookStorage' do
         it "should has empty storage if delete_book is called" do
             subject.add_book(position, book)
             result = subject.delete_book_from_position(position)
-            expect(subject.storage.size()).to eq 0
+            expect(subject.size()).to eq 0
         end
 
         it "should has one book if delete_book from two books storage is called" do
             subject.add_book(position, book)
             subject.add_book("010102", book)
             result = subject.delete_book_from_position(position)
-            expect(subject.storage.size()).to eq 1
+            expect(subject.size()).to eq 1
         end
     end
 

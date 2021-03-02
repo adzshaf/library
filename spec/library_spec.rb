@@ -70,7 +70,7 @@ RSpec.describe Library do
 
         it "has one book in storage after put book" do
             subject.put_book(9780747532743, "Harry Potter 1", "J. K. Rowling")
-            expect(subject.book_storage.storage.size()).to eq 1
+            expect(subject.book_storage.size()).to eq 1
         end
 
         it "returns All shelves are full if no space left" do

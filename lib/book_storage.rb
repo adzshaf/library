@@ -65,4 +65,8 @@ class BookStorage
 
         title_result
     end
+
+    def size()
+        @storage.size
+    end
 end
