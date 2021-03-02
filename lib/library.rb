@@ -10,18 +10,18 @@ class Library
     end
 
     def build_library(no_shelf, row, column)
-        @shelf_size = no_shelf
-        @row_size = row
-        @column_size = column
+        @shelf_size = no_shelf.to_i
+        @row_size = row.to_i
+        @column_size = column.to_i
         @available_position = "010101"
 
         output = []
-        no_shelf.times do |index|
-            if row > 1 and column >1
+        @shelf_size.times do |index|
+            if @row_size > 1 and @column_size > 1
                 output.push("Shelf #{index+1} with #{row} rows and #{column} columns is added")
-            elsif row > 1 
+            elsif @row_size > 1 
                 output.push("Shelf #{index+1} with #{row} rows and 1 column is added")
-            elsif column > 1
+            elsif @column_size > 1
                 output.push("Shelf #{index+1} with 1 row and #{column} columns is added")
             else
                 output.push("Shelf #{index+1} with 1 row and 1 column is added")
@@ -82,6 +82,7 @@ class Library
         if delete_result.nil?
             "Slot #{position} is empty"
         else
+            @available_position = position
             "Slot #{position} is free"
         end
     end

@@ -162,6 +162,11 @@ RSpec.describe Library do
             expect(subject.book_storage).to receive(:delete_book_from_position).with('010101')
             expect(subject.take_book_from('010101')).to eq ("Slot 010101 is free")
         end
+
+        it "should update available position to deleted positionif delete_book_from_position is called" do
+            subject.take_book_from('010101')
+            expect(subject.available_position).to eq "010101"
+        end
     end
 
     context "find_book" do
