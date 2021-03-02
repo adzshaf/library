@@ -95,6 +95,14 @@ class Library
 
     def search_book_by_author(author)
         result = @book_storage.search_book_by_author(author)
-        "No result found!"
+        if result.empty? 
+            "No result found!"
+        else
+            string_result = []
+            result.each do |book|
+                string_result.push(book.to_s)
+            end
+            string_result.join("\n")
+        end
     end
 end
