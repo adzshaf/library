@@ -142,5 +142,10 @@ RSpec.describe 'BookStorage' do
             result = subject.search_book_by_author("Uncle Bob")
             expect(result).to eq nil
         end
+
+        it "should return Book if search book by author can find book" do
+            result = subject.search_book_by_author("J. K. Rowling Jr")
+            expect(result.is_a?(Book)).to eq true
+        end
     end
 end

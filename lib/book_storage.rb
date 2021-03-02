@@ -47,6 +47,14 @@ class BookStorage
     end
 
     def search_book_by_author(author)
-        nil
+        book_result = nil
+
+        @storage.each_value do |book|
+            if book.has_author?(author)
+                book_result = book
+            end
+        end
+
+        book_result
     end
 end
