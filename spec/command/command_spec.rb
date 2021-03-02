@@ -5,7 +5,7 @@ RSpec.describe Command do
         subject { Command.new }
 
         it "should raise error" do
-            expect { subject.execute("Test") }.to raise_error
+            expect { subject.execute("Test") }.to raise_error { NotImplementedError }
         end
     end
 end
