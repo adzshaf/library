@@ -155,6 +155,13 @@ RSpec.describe Library do
             result = subject.take_book_from('010102')
             expect(result).to eq "Slot 010102 is empty"
         end
+
+        it "should call book_storage.delete_book_from_position" do
+            book = Book.new(9780747532744, 'Harry Potter', 'J. K. Rowling')
+            allow(subject.book_storage).to receive(:delete_book_from_position).and_return(Book)
+            expect(subject.book_storage).to receive(:delete_book_from_position).with('010101')
+            expect(subject.take_book_from('010101')).to eq ("Slot 010101 is free")
+        end
     end
 
     context "find_book" do
