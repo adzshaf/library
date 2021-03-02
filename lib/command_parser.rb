@@ -29,7 +29,11 @@ class CommandParser
   end
 
   def execute(command, args)
-    command = @commands[command]
-    command.execute(args)
+    if @commands.key?(command)
+      command = @commands[command]
+      command.execute(args)
+    else
+      "Wrong command!"
+    end
   end
 end

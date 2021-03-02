@@ -48,5 +48,11 @@ RSpec.describe CommandParser do
       args = []
       expect(subject.execute(command, args)).to eq 'There is no book!'
     end
+
+    it 'cannot call command other than requirements' do
+      command = 'abcd'
+      args = []
+      expect(subject.execute(command, args)).to eq 'Wrong command!'
+    end
   end
 end
