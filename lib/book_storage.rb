@@ -79,6 +79,6 @@ class BookStorage
 
     private
     def sort_storage()
-        @storage = @storage.sort_by { |position, book| position }
+        @storage = @storage.sort_by { |position, book| position }.to_h
     end
 end
