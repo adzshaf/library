@@ -22,5 +22,11 @@ RSpec.describe CommandParser do
         args = [1, 1, 1]
         expect(subject.execute(command, args)).to eq "Allocated address: 010101"
     end
+
+    it 'can call TakeBookCommand' do
+      command = 'take_book_from'
+      args = ["010101"]
+      expect(subject.execute(command, args)).to eq "Slot 010101 is free"
+  end
   end
 end
