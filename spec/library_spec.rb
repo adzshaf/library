@@ -215,5 +215,11 @@ RSpec.describe Library do
             result = subject.search_book_by_title('Clean Code')
             expect(result).to eq ("No result found!")
         end
+
+        it "should call book_storage.search_book_by_title" do
+            allow(subject.book_storage).to receive(:search_book_by_title).and_return([])
+            expect(subject.book_storage).to receive(:search_book_by_title).with('Clean Code')
+            expect(subject.search_book_by_title('Clean Code')).to eq ("No result found!")
+        end
     end
 end

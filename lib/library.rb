@@ -107,6 +107,7 @@ class Library
     end
 
     def search_book_by_title(title)
+        result = @book_storage.search_book_by_title(title)
         "No result found!"
     end
 end
