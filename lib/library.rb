@@ -40,9 +40,15 @@ class Library
         book = Book.new(isbn, title, author)
         @book_storage.add_book(@available_position, book)
 
-        increment_position
+        find_available_position
 
         result
+    end
+
+    def find_available_position
+        until @book_storage.get_book_by_position(@available_position).nil?
+            increment_position
+        end
     end
 
     def increment_position
