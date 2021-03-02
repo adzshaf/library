@@ -34,5 +34,11 @@ RSpec.describe CommandParser do
       args = ["Harry"]
       expect(subject.execute(command, args)).to eq "Book not found!"
     end
+
+    it 'can call SearchAuthorCommand' do
+      command = 'search_books_by_author'
+      args = ["Harry"]
+      expect(subject.execute(command, args)).to eq "Book not found!"
+    end
   end
 end
