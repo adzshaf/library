@@ -1,6 +1,20 @@
 # Final Project
 
-This project is a library CLI for Elective Advanced Class
+This project is a library CLI for Elective Advanced Class.
+
+## Project Description
+
+This project can be used to help you store your book collection. This project can help you do things such as:
+- Define shelf size based on your shelf size
+- Input book information (ISBN, title, author) and it will be assigned to empty slot in the shelf
+- Find the slot address of a first book with a given ISBN
+- List of all books (ISBN, title, author) and their slot addresses
+- Search the books by title keyword
+- Search the books by author keyword
+
+
+## Environment setup
+- ```ruby >= 3.0```
 
 ## Installation
 
@@ -12,6 +26,12 @@ bundle install
 
 ```bash
 ruby main.rb
+```
+
+## Run Test
+
+```
+rspec -fd
 ```
 
 ## Example query
