@@ -138,12 +138,12 @@ RSpec.describe 'BookStorage' do
             subject.add_book("010102", Book.new(9780747532745, 'Harry Potter 2', 'J. K. Rowling Jr., Eka Kurniawan'))
         end
 
-        it "should return nil if search book by author doesnt find anything" do
+        it "should return empty list if search book by author doesnt find anything" do
             result = subject.search_book_by_author("Uncle Bob")
             expect(result.size).to eq 0
         end
 
-        it "should return Book if search book by author can find book" do
+        it "should return list with size of 1 if search book by author can find 1 book" do
             result = subject.search_book_by_author("J. K. Rowling Jr")
             expect(result.size).to eq 1
         end
