@@ -1,8 +1,9 @@
 require_relative 'book_storage'
+require_relative 'book'
 
 class Library
     attr_reader :shelf_size, :row_size, :column_size, :available_position, :book_storage
-    attr_writer :available_position
+    attr_writer :available_position, :book_storage
 
     def initialize
         @book_storage = BookStorage.new 
@@ -90,5 +91,10 @@ class Library
 
     def find_book(isbn)
         @book_storage.find_book_by_isbn(isbn)
+    end
+
+    def search_book_by_author(author)
+        result = @book_storage.search_book_by_author(author)
+        "No result found!"
     end
 end
