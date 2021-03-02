@@ -33,7 +33,7 @@ class CommandParser
       command = @commands[command]
       command.execute(args)
     else
-      "Wrong command!"
+      'Wrong command!'
     end
   end
 end
