@@ -105,4 +105,8 @@ class Library
             string_result.join("\n")
         end
     end
+
+    def search_book_by_title(title)
+        "No result found!"
+    end
 end

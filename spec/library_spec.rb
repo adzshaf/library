@@ -203,4 +203,17 @@ RSpec.describe Library do
             expect(result).to eq ("9780747532744 | Harry Potter | J. K. Rowling\n9780747532745 | Harry Potter 1 | J. K. Rowling")
         end
     end
+
+    context "search_book_by_title" do
+        before(:each) do
+            subject.build_library(1, 1, 2)
+            subject.put_book(9780747532744, 'Harry Potter', 'J. K. Rowling')
+            subject.put_book(9780747532745, 'Harry Potter 1', 'J. K. Rowling')
+        end
+
+        it "should return no result found if no book is found from search_book_by_title" do
+            result = subject.search_book_by_title('Clean Code')
+            expect(result).to eq ("No result found!")
+        end
+    end
 end
