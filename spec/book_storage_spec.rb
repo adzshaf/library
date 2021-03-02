@@ -177,5 +177,10 @@ RSpec.describe 'BookStorage' do
             result = subject.search_book_by_title("Harry Potter 2")
             expect(result.size).to eq 1
         end
+
+        it "should return list with size 2 if search book by title find 2 books" do
+            result = subject.search_book_by_title("Harry Potter")
+            expect(result.size).to eq 2
+        end
     end
 end
