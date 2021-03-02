@@ -40,5 +40,11 @@ RSpec.describe CommandParser do
       args = ["Harry"]
       expect(subject.execute(command, args)).to eq "Book not found!"
     end
+
+    it 'can call ListBooksCommand' do
+      command = 'list_books'
+      args = []
+      expect(subject.execute(command, args)).to eq "There is no book!"
+    end
   end
 end
