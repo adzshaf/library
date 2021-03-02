@@ -2,6 +2,7 @@ require "./lib/command/find_book_command"
 require "./lib/command/build_library_command"
 require "./lib/command/put_book_command"
 require "./lib/command/take_book_command"
+require "./lib/command/search_title_command"
 
 class CommandParser
     @@instance = CommandParser.new
@@ -16,6 +17,7 @@ class CommandParser
         @commands["build_library"] = BuildLibraryCommand.new
         @commands["put_book"] = PutBookCommand.new
         @commands["take_book_from"] = TakeBookCommand.new
+        @commands["search_books_by_title"] = SearchTitleCommand.new
     end
 
     def execute(command, args)

@@ -27,6 +27,12 @@ RSpec.describe CommandParser do
       command = 'take_book_from'
       args = ["010101"]
       expect(subject.execute(command, args)).to eq "Slot 010101 is free"
-  end
+    end
+
+    it 'can call SearchTitleCommand' do
+      command = 'search_books_by_title'
+      args = ["Harry"]
+      expect(subject.execute(command, args)).to eq "Book not found!"
+    end
   end
 end
