@@ -35,7 +35,6 @@ class BookStorage
     def find_book_by_isbn(isbn)
         position_result = nil
 
-
         @storage.each do |position, book|
             if book.has_isbn?(isbn)
                 position_result = position
@@ -50,9 +49,9 @@ class BookStorage
 
         sort_storage()
 
-        @storage.each_value do |book|
+        @storage.each do |key, book|
             if book.has_author?(author)
-                book_result.push(book)
+                book_result.push("#{key}: #{book.to_s}")
             end
         end
 
@@ -64,9 +63,9 @@ class BookStorage
 
         sort_storage()
 
-        @storage.each_value do |book|
+        @storage.each do |key, book|
             if book.has_title?(title)
-                title_result.push(book)
+                title_result.push("#{key}: #{book.to_s}")
             end
         end
 

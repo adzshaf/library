@@ -117,11 +117,7 @@ class Library
         if result.empty? 
             "No result found!"
         else
-            string_result = []
-            result.each do |book|
-                string_result.push(book.to_s)
-            end
-            string_result.join("\n")
+            result.join("\n")
         end
     end
 

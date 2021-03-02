@@ -227,7 +227,7 @@ RSpec.describe Library do
 
         it "should return books if books are found from search_book_by_author" do
             result = subject.search_book_by_author('J. K. Rowling')
-            expect(result).to eq ("9780747532744 | Harry Potter | J. K. Rowling\n9780747532745 | Harry Potter 1 | J. K. Rowling")
+            expect(result).to eq ("010101: 9780747532744 | Harry Potter | J. K. Rowling\n010102: 9780747532745 | Harry Potter 1 | J. K. Rowling")
         end
     end
 
@@ -251,7 +251,7 @@ RSpec.describe Library do
 
         it "should return books if books are found from search_book_by_title" do
             result = subject.search_book_by_title('Harry Potter')
-            expect(result).to eq ("9780747532744 | Harry Potter | J. K. Rowling\n9780747532745 | Harry Potter 1 | J. K. Rowling")
+            expect(result).to eq ("010101: 9780747532744 | Harry Potter | J. K. Rowling\n010102: 9780747532745 | Harry Potter 1 | J. K. Rowling")
         end
     end
 end
