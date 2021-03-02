@@ -73,20 +73,17 @@ class Library
     end
 
     def take_book_from(position)
-        shelf = position[0, 2].to_i
-        row = position[2, 2].to_i
-        column = position[4, 2].to_i
-
-        if shelf > @shelf_size or row > @row_size or column > column_size
+        if position_valid?(position)
+            delete_result = @book_storage.delete_book_from_position(position)
+        else
             return "Invalid code!"
         end
-        
-        delete_result = @book_storage.delete_book_from_position(position)
 
         if delete_result.nil?
-            return "Slot #{position} is empty"
+            "Slot #{position} is empty"
+        else
+            "Slot #{position} is free"
         end
-        "Slot #{position} is free"
     end
 
     def find_book(isbn)
@@ -119,5 +116,17 @@ class Library
             end
             string_result.join("\n")
         end
+    end
+
+    private
+    def position_valid?(position)
+        shelf = position[0, 2].to_i
+        row = position[2, 2].to_i
+        column = position[4, 2].to_i
+
+        if shelf > @shelf_size or row > @row_size or column > column_size
+            return false
+        end
+        true
     end
 end
