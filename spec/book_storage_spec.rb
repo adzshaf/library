@@ -109,19 +109,19 @@ RSpec.describe 'BookStorage' do
             subject.add_book("010102", Book.new(9780747532745, 'Harry Potter 2', 'J. K. Rowling Jr.'))
         end
 
-        it "should return Found the book at first position if find_book_by_isbn of first book is called" do
+        it "should return not nil if find_book_by_isbn of first book is called" do
             result = subject.find_book_by_isbn(9780747532744)
-            expect(result).to eq "Found the book at 010101"
+            expect(result).to be_truthy
         end
 
-        it "should return Found the book at second position if find_book_by_isbn of second book is called" do
+        it "should return not nil if find_book_by_isbn of second book is called" do
             result = subject.find_book_by_isbn(9780747532745)
-            expect(result).to eq "Found the book at 010102"
+            expect(result).to be_truthy
         end
 
-        it "should return Book not found! if find_book_by_isbn of non existence book is called" do
+        it "should return nil if find_book_by_isbn of non existence book is called" do
             result = subject.find_book_by_isbn(1111111111111)
-            expect(result).to eq "Book not found!"
+            expect(result).to eq nil
         end
     end
 

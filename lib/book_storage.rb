@@ -39,11 +39,7 @@ class BookStorage
             end
         end
 
-        if position_result.nil?
-            return "Book not found!"
-        else
-            "Found the book at #{position_result}"
-        end
+        position_result
     end
 
     def search_book_by_author(author)
