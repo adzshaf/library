@@ -59,6 +59,14 @@ class BookStorage
     end
 
     def search_book_by_title(title)
-        []
+        title_result = []
+
+        @storage.each_value do |book|
+            if book.has_title?(title)
+                title_result.push(book)
+            end
+        end
+
+        title_result
     end
 end
