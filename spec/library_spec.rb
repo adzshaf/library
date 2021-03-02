@@ -221,5 +221,10 @@ RSpec.describe Library do
             expect(subject.book_storage).to receive(:search_book_by_title).with('Clean Code')
             expect(subject.search_book_by_title('Clean Code')).to eq ("No result found!")
         end
+
+        it "should return books if books are found from search_book_by_title" do
+            result = subject.search_book_by_title('Harry Potter')
+            expect(result).to eq ("9780747532744 | Harry Potter | J. K. Rowling\n9780747532745 | Harry Potter 1 | J. K. Rowling")
+        end
     end
 end
