@@ -9,6 +9,12 @@ class Library
         @book_storage = BookStorage.new 
     end
 
+    @@instance = Library.new
+
+    def self.instance
+        @@instance
+    end
+
     def build_library(no_shelf, row, column)
         @shelf_size = no_shelf.to_i
         @row_size = row.to_i
