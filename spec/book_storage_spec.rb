@@ -80,8 +80,8 @@ RSpec.describe 'BookStorage' do
         let(:book2) { Book.new 9780747532745, 'Harry Potter 2', 'J. K. Rowling' }
         let(:position2) { "010102" }
 
-        it "should return empty string if book storage has empty storage" do
-            expect(subject.to_s).to eq ""
+        it "should return There is no book! if book storage has empty storage" do
+            expect(subject.to_s).to eq "There is no book!"
         end
 
         it "should return string of 1 book if book storage has 1 book" do

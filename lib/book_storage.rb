@@ -28,7 +28,7 @@ class BookStorage
             end
             result.join("\n")
         else
-            ""
+            "There is no book!"
         end
     end
 
