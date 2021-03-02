@@ -16,5 +16,11 @@ RSpec.describe CommandParser do
         args = [1, 1, 1]
         expect(subject.execute(command, args)).to eq "Shelf 1 with 1 row and 1 column is added"
     end
+
+    it 'can call PutBookCommand#put_book' do
+        command = 'put_book'
+        args = [1, 1, 1]
+        expect(subject.execute(command, args)).to eq "Allocated address: 010101"
+    end
   end
 end
