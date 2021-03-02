@@ -153,4 +153,24 @@ RSpec.describe 'BookStorage' do
             expect(result.size).to eq 2
         end
     end
+
+
+    context "search_book_by_title" do
+        let(:isbn) { 9780747532744 }
+        let(:title) { 'Harry Potter' }
+        let(:author) { 'J. K. Rowling' }
+
+        let(:book) { Book.new isbn, title, author }
+        let(:position) { "010101" }
+
+        before(:each) do
+            subject.add_book(position, book)
+            subject.add_book("010102", Book.new(9780747532745, 'Harry Potter 2', 'J. K. Rowling Jr., Eka Kurniawan'))
+        end
+
+        it "should return empty list if search book by title doesnt find anything" do
+            result = subject.search_book_by_title("Clean Code")
+            expect(result.size).to eq 0
+        end
+    end
 end

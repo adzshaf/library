@@ -57,4 +57,8 @@ class BookStorage
 
         book_result
     end
+
+    def search_book_by_title(title)
+        []
+    end
 end
