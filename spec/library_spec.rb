@@ -181,10 +181,21 @@ RSpec.describe Library do
     end
 
     context "search_book_by_author" do
+        before(:each) do
+            subject.build_library(1, 1, 2)
+            subject.put_book(9780747532744, 'Harry Potter', 'J. K. Rowling')
+            subject.put_book(9780747532745, 'Harry Potter 1', 'J. K. Rowling')
+        end
+
         it "should call book_storage.search_book_by_author" do
             allow(subject.book_storage).to receive(:search_book_by_author).and_return([])
             expect(subject.book_storage).to receive(:search_book_by_author).with('Uncle Bob')
             expect(subject.search_book_by_author('Uncle Bob')).to eq ("No result found!")
+        end
+
+        it "should return no result found if no book is found from search_book_by_author" do
+            result = subject.search_book_by_author('Uncle Bob')
+            expect(result).to eq ("No result found!")
         end
     end
 end
